@@ -14,13 +14,23 @@ function printResult(){
     let qtdAdults = adultsInput.value;
     let qtdChildren = childrenInput.value;
     let qtdHours = hoursInput.value;
-
+    if(qtdAdults <= 0 || qtdAdults == ''){
+        alert('Sem adultos não há churrasco');
+        location.reload();
+    
+    }
+    else if(qtdHours <= 0 || qtdHours == ''){
+        alert('Defina o tempo do seu churrasco');
+        location.reload();
+    }
+    else{
     let qtdCarneTotal = (carnePP(qtdHours) * qtdAdults + (carnePP(qtdHours) / 2 * qtdChildren)) /1000
     let qtdCervejaTotal = ((cervejaPP(qtdHours) * qtdAdults)/355)
     let qtdBebidasTotal = ((bebidasPP(qtdHours) * qtdAdults)+ (bebidasPP(qtdHours)/2 * qtdChildren)) /1000
     result.innerHTML = '<p>'+qtdCarneTotal+'Kg de Carne</p><p>'
     +Math.ceil(qtdCervejaTotal)+' Latas(355ml) de cerveja</p><p>'
     +qtdBebidasTotal+' Litros de bebidas não alcoolicas</p>'
+    }
 }
 
 function carnePP(qtdHours){
