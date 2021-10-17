@@ -29,7 +29,7 @@ function printResult(){
     let qtdCarneTotal = (carnePP(qtdHours) * qtdAdults + (carnePP(qtdHours) / 2 * qtdChildren)) /1000
     let qtdCervejaTotal = ((cervejaPP(qtdHours) * qtdAdults)/355)
     let qtdBebidasTotal = ((bebidasPP(qtdHours) * qtdAdults)+ (bebidasPP(qtdHours)/2 * qtdChildren)) /1000
-    let randomSugs = Math.floor(Math.random()*10)//cria numero randomico para selecionar um index do array que vai conter as receitas
+    let randomSugs = Math.floor(Math.random()*10)//cria numero randomico para selecionar um index do array que vai conter as receitas. O Math.floor é usado para o numero ficar entre 0 e 9
     
     //Variaveis que recebem o valor das arrays contendo a receita para sugestão
     let ingredientes = ingredient(qtdCarneTotal, randomSugs)
