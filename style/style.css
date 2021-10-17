@@ -1,10 +1,27 @@
+body, html{
+    height: 100%;
+    margin: 0px
+}
+body{
+    background-image: url('../images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+}
 .container{
     font-family: Arial, Helvetica, sans-serif;
     max-width: 600px;
-    background-color: rgb(230, 240, 252);
+    background-color: rgba(230, 240, 252, 0.514);
     padding: 20px;
-    margin: auto;
-    border-radius: 3%;
+    border-top-left-radius: 3%;
+    border-bottom-left-radius: 3%;
+    margin-left: auto;
+    border: none;
+    box-shadow: 0 0 1em rgba(60, 72, 240, 0.692);
+    line-height: 1.5;
+    
 }
 #adults{
     display: block;
@@ -14,6 +31,7 @@
     padding: 5px;
     box-sizing: border-box;
     border:none;
+    
 }
 #childrens{
     display: block;
@@ -46,6 +64,7 @@ h1{
 }
 button{
     display: inline;
+    margin: none;
     
 }
 button:hover{

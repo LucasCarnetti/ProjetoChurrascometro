@@ -81,16 +81,16 @@ function ingredient(qtdCarneTotal, randomSugs){
     let alho = parseFloat(((qtdCarneTotal * 0.1) * 1000).toFixed(2))
     
     //variaveis q serão adicionadas a array
-    let primeiraSugs = "<br>Porco e Alcatra no espeto</p><p>Ingredientes:<p>"+(lombo)+"Kg de Lombo de porco</p><p>"+(alcatra)+"Kg de Alcatra</p><p>Vinagre de vinho tinto</p><p>Cebola, alho e sal a gosto</p>"
-    let segundaSugs = "<br>Churrasco de Carneiro</p><p>Ingredientes:<p>"+(qtdCarneTotal)+"Kg de Carne de carneiro cortado em pedaços médios</p><p>Vinho branco Seco</p><p>1/2 copo de vinagre branco</p><p>1 cabeça de alho</p><p>Cebolas a gosto</p><p>1 xícara de azeite</p><p>Alecrim, pimenta do reino e sal a gosto</p>"
-    let terceiraSugs = "<br>Picanha no forno</p><p>Ingredientes:<p>"+(qtdCarneTotal)+"Kg de Picanha</p><p>Sal grosso temperado</p>"
-    let quartaSugs = "<br>Picanha Especial</p><p>Ingredientes:<p>"+(qtdCarneTotal)+"Kg de Picanha</p><p>Sal grosso temperado</p>"
-    let quintaSugs = "<br>Churrasco gaúcho com aperitivo de linguiça toscana</p><p>Ingredientes:<p>"+(costela)+"Kg de Costela de gado</p><p>"+(linguica)+"Kg de linguiça toscana</p><p>Sal grosso</p>"
-    let sextaSugs = "<br>Espetinhos de coxão mole em cubos</p><p>Ingredientes:<p>"+(coxao)+"kg de Coxão mole em cubos</p><p>"+(bacon)+"Kg de bacon em tiras</p><p>Espetinhos de madeira</p><p>Pimenta do reino, Azeite e Sal a gosto</p>"
-    let setimaSugs =  "<br>Picanha na manteiga verde</p><p>Ingredientes:<p>"+(qtdCarneTotal)+"kg de Picanha</p><p>"+(manteiga)+"Kg de Manteiga com sal</p><p>"+(alho)+" Gramas de Alho sem casca</p><p>Salsa, Cebolinha e Sal a gosto"
-    let oitavaSugs = "<br>Churrasco gaúcho com aperitivo de linguiça toscana</p><p>Ingredientes:<p>"+(costela)+"Kg de Costela de gado</p><p>"+(linguica)+"Kg de linguiça toscana</p><p>Sal grosso</p>"
-    let nonaSugs = "<br>Picanha Especial</p><p>Ingredientes:<p>"+(qtdCarneTotal)+"Kg de Picanha</p><p>Sal grosso temperado</p>"
-    let decimaSugs = "<br>Porco e Alcatra no espeto</p><p>Ingredientes:<p>"+(lombo)+"Kg de Lombo de porco</p><p>"+(alcatra)+"Kg de Alcatra</p><p>Vinagre de vinho tinto</p><p>Cebola, alho e sal a gosto</p>"
+    let primeiraSugs = "<br><b>Porco e Alcatra no espeto</b></p><p>Ingredientes:<p>"+(lombo)+"Kg de Lombo de porco</p><p>"+(alcatra)+"Kg de Alcatra</p><p>Vinagre de vinho tinto</p><p>Cebola, alho e sal a gosto</p>"
+    let segundaSugs = "<br><b>Churrasco de Carneiro</b></p><p>Ingredientes:<p>"+(qtdCarneTotal)+"Kg de Carne de carneiro cortado em pedaços médios</p><p>Vinho branco Seco</p><p>1/2 copo de vinagre branco</p><p>1 cabeça de alho</p><p>Cebolas a gosto</p><p>1 xícara de azeite</p><p>Alecrim, pimenta do reino e sal a gosto</p>"
+    let terceiraSugs = "<br><b>Picanha no forno</b></p><p>Ingredientes:<p>"+(qtdCarneTotal)+"Kg de Picanha</p><p>Sal grosso temperado</p>"
+    let quartaSugs = "<br><b>Picanha Especial</b></p><p>Ingredientes:<p>"+(qtdCarneTotal)+"Kg de Picanha</p><p>Sal grosso temperado</p>"
+    let quintaSugs = "<br><b>Churrasco gaúcho com aperitivo de linguiça toscana</b></p><p>Ingredientes:<p>"+(costela)+"Kg de Costela de gado</p><p>"+(linguica)+"Kg de linguiça toscana</p><p>Sal grosso</p>"
+    let sextaSugs = "<br><b>Espetinhos de coxão mole em cubos</b></p><p>Ingredientes:<p>"+(coxao)+"kg de Coxão mole em cubos</p><p>"+(bacon)+"Kg de bacon em tiras</p><p>Espetinhos de madeira</p><p>Pimenta do reino, Azeite e Sal a gosto</p>"
+    let setimaSugs =  "<br><b>Picanha na manteiga verde</b></p><p>Ingredientes:<p>"+(qtdCarneTotal)+"kg de Picanha</p><p>"+(manteiga)+"Kg de Manteiga com sal</p><p>"+(alho)+" Gramas de Alho sem casca</p><p>Salsa, Cebolinha e Sal a gosto"
+    let oitavaSugs = "<br><b>Churrasco gaúcho com aperitivo de linguiça toscana</b></p><p>Ingredientes:<p>"+(costela)+"Kg de Costela de gado</p><p>"+(linguica)+"Kg de linguiça toscana</p><p>Sal grosso</p>"
+    let nonaSugs = "<br><b>Picanha Especial</b></p><p>Ingredientes:<p>"+(qtdCarneTotal)+"Kg de Picanha</p><p>Sal grosso temperado</p>"
+    let decimaSugs = "<br><b>Porco e Alcatra no espeto</b></p><p>Ingredientes:<p>"+(lombo)+"Kg de Lombo de porco</p><p>"+(alcatra)+"Kg de Alcatra</p><p>Vinagre de vinho tinto</p><p>Cebola, alho e sal a gosto</p>"
    
     //Array contendo cada receita em seu index
     let sugsArray = [primeiraSugs, segundaSugs, terceiraSugs, quartaSugs, quintaSugs, sextaSugs, setimaSugs, oitavaSugs, nonaSugs, decimaSugs]
