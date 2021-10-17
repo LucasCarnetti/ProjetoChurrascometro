@@ -17,11 +17,11 @@ function printResult(){
     let qtdHours = hoursInput.value;
     if(qtdAdults <= 0 || qtdAdults == ''){
         alert('Sem adultos não há churrasco');
-        location.reload();
+        location.reload();                            //Testando se há algo adicionado no campo adultos
     
     }
     else if(qtdHours <= 0 || qtdHours == ''){
-        alert('Defina o tempo do seu churrasco');
+        alert('Defina o tempo do seu churrasco'); //Testando se há algo no campo horas
         location.reload();
     }
     else{
@@ -30,13 +30,15 @@ function printResult(){
     let qtdCervejaTotal = ((cervejaPP(qtdHours) * qtdAdults)/355)
     let qtdBebidasTotal = ((bebidasPP(qtdHours) * qtdAdults)+ (bebidasPP(qtdHours)/2 * qtdChildren)) /1000
     let randomSugs = Math.floor(Math.random()*10)//cria numero randomico para selecionar um index do array que vai conter as receitas
+    
+    //Variaveis que recebem o valor das arrays contendo a receita para sugestão
     let ingredientes = ingredient(qtdCarneTotal, randomSugs)
     let preparo = prepare(randomSugs)
     
     result.innerHTML = '<p>'+qtdCarneTotal+'Kg de Carne</p><p>'
     +Math.ceil(qtdCervejaTotal)+' Latas(355ml) de cerveja</p><p>'
     +qtdBebidasTotal+' Litros de bebidas não alcoolicas</p>'
-    if(sugs.checked){
+    if(sugs.checked){  //Caso o campo "Sugerir churrasco" estiver marcado, ele adiciona o valor das arrays
         result.innerHTML += '<p>'+ingredientes+'</p><p>'+preparo+'</p>'
         }
     
@@ -67,23 +69,38 @@ function bebidasPP(qtdHours){
     }
 }
 function ingredient(qtdCarneTotal, randomSugs){
+
+    //Calculo de cada ingrediente já restringindo a 2 casas decimais depois da vírgula
+    let lombo = parseFloat((qtdCarneTotal * 0.6).toFixed(2))
+    let alcatra = parseFloat((qtdCarneTotal * 0.4).toFixed(2))
+    let costela = parseFloat((qtdCarneTotal * 0.8).toFixed(2))
+    let linguica = parseFloat((qtdCarneTotal * 0.2).toFixed(2))
+    let coxao = parseFloat((qtdCarneTotal * 0.8).toFixed(2))
+    let bacon = parseFloat((qtdCarneTotal * 0.2).toFixed(2))
+    let manteiga = parseFloat((qtdCarneTotal * 0.25).toFixed(2))
+    let alho = parseFloat(((qtdCarneTotal * 0.1) * 1000).toFixed(2))
     
-    let primeiraSugs = "<br>Porco e Alcatra no espeto</p><p>Ingredientes:<p>"+(qtdCarneTotal * 0.6)+"Kg de Lombo de porco</p><p>"+(qtdCarneTotal * 0.2)+"Kg de linguicinha toscana</p><p>Vinagre de vinho tinto</p><p>Cebola, alho e sal a gosto</p>"
+    //variaveis q serão adicionadas a array
+    let primeiraSugs = "<br>Porco e Alcatra no espeto</p><p>Ingredientes:<p>"+(lombo)+"Kg de Lombo de porco</p><p>"+(alcatra)+"Kg de Alcatra</p><p>Vinagre de vinho tinto</p><p>Cebola, alho e sal a gosto</p>"
     let segundaSugs = "<br>Churrasco de Carneiro</p><p>Ingredientes:<p>"+(qtdCarneTotal)+"Kg de Carne de carneiro cortado em pedaços médios</p><p>Vinho branco Seco</p><p>1/2 copo de vinagre branco</p><p>1 cabeça de alho</p><p>Cebolas a gosto</p><p>1 xícara de azeite</p><p>Alecrim, pimenta do reino e sal a gosto</p>"
     let terceiraSugs = "<br>Picanha no forno</p><p>Ingredientes:<p>"+(qtdCarneTotal)+"Kg de Picanha</p><p>Sal grosso temperado</p>"
     let quartaSugs = "<br>Picanha Especial</p><p>Ingredientes:<p>"+(qtdCarneTotal)+"Kg de Picanha</p><p>Sal grosso temperado</p>"
-    let quintaSugs = "<br>Churrasco gaúcho com aperitivo de linguiça toscana</p><p>Ingredientes:<p>"+(qtdCarneTotal * 0.8)+"Kg de Costela de gado</p><p>"+(qtdCarneTotal * 0.2)+"Kg de linguiça toscana</p><p>Sal grosso</p>"
-    let sextaSugs = "<br>Espetinhos de coxão mole em cubos</p><p>Ingredientes:<p>"+(qtdCarneTotal * 0.8)+"kg de Coxão mole em cubos</p><p>"+(qtdCarneTotal * 0.2)+"Kg de bacon em tiras</p><p>Espetinhos de madeira</p><p>Pimenta do reino, Azeite e Sal a gosto</p>"
-    let setimaSugs =  "<br>Picanha na manteiga verde</p><p>Ingredientes:<p>"+(qtdCarneTotal)+"kg de Picanha</p><p>"+(qtdCarneTotal * 0.25)+"Kg de Manteiga com sal</p><p>"+(qtdCarneTotal * 0.1)+"Kg de Alho sem casca</p><p>Salsa, Cebolinha e Sal a gosto"
-    let oitavaSugs = "<br>Churrasco gaúcho com aperitivo de linguiça toscana</p><p>Ingredientes:<p>"+(qtdCarneTotal * 0.8)+"Kg de Costela de gado</p><p>"+(qtdCarneTotal * 0.2)+"Kg de linguiça toscana</p><p>Sal grosso</p>"
+    let quintaSugs = "<br>Churrasco gaúcho com aperitivo de linguiça toscana</p><p>Ingredientes:<p>"+(costela)+"Kg de Costela de gado</p><p>"+(linguica)+"Kg de linguiça toscana</p><p>Sal grosso</p>"
+    let sextaSugs = "<br>Espetinhos de coxão mole em cubos</p><p>Ingredientes:<p>"+(coxao)+"kg de Coxão mole em cubos</p><p>"+(bacon)+"Kg de bacon em tiras</p><p>Espetinhos de madeira</p><p>Pimenta do reino, Azeite e Sal a gosto</p>"
+    let setimaSugs =  "<br>Picanha na manteiga verde</p><p>Ingredientes:<p>"+(qtdCarneTotal)+"kg de Picanha</p><p>"+(manteiga)+"Kg de Manteiga com sal</p><p>"+(alho)+" Gramas de Alho sem casca</p><p>Salsa, Cebolinha e Sal a gosto"
+    let oitavaSugs = "<br>Churrasco gaúcho com aperitivo de linguiça toscana</p><p>Ingredientes:<p>"+(costela)+"Kg de Costela de gado</p><p>"+(linguica)+"Kg de linguiça toscana</p><p>Sal grosso</p>"
     let nonaSugs = "<br>Picanha Especial</p><p>Ingredientes:<p>"+(qtdCarneTotal)+"Kg de Picanha</p><p>Sal grosso temperado</p>"
-    let decimaSugs = "<br>Porco e Alcatra no espeto</p><p>Ingredientes:<p>"+(qtdCarneTotal * 0.6)+"Kg de Lombo de porco</p><p>"+(qtdCarneTotal * 0.2)+"Kg de linguicinha toscana</p><p>Vinagre de vinho tinto</p><p>Cebola, alho e sal a gosto</p>"
+    let decimaSugs = "<br>Porco e Alcatra no espeto</p><p>Ingredientes:<p>"+(lombo)+"Kg de Lombo de porco</p><p>"+(alcatra)+"Kg de Alcatra</p><p>Vinagre de vinho tinto</p><p>Cebola, alho e sal a gosto</p>"
+   
+    //Array contendo cada receita em seu index
     let sugsArray = [primeiraSugs, segundaSugs, terceiraSugs, quartaSugs, quintaSugs, sextaSugs, setimaSugs, oitavaSugs, nonaSugs, decimaSugs]
     
-    return sugsArray[randomSugs]
+    return sugsArray[randomSugs] //Retorna o index correspondente ao numero aleatório gerado em randomSugs
     
 }
 function prepare(randomSugs){
+
+    //modo de preparo das receitas
     let primeiraRec = "<br>Misture o vinagre, a cebola cortada em tiras, o alho e o Sal.\
     <br>Colocar as carnes para marinar, no mínimo 2 horas, nesta mistura Coloque as carnes no espeto e então leve para a churrasqueira.\
     <br>Vire a carne com frequência para assar uniformemente até chegar no ponto desejado.\
@@ -143,6 +160,8 @@ function prepare(randomSugs){
     <br>Vire a carne com frequência para assar uniformemente até chegar no ponto desejado.\
     <br>De tempos em tempos, vá colocando o liquido em que elas ficaram marinando por cima das carnes\
     <br>Quando pronto, sirva com maionese e farofa" 
+
+    
     let recArray = [primeiraRec, segundaRec, terceiraRec, quartaRec, quintaRec, sextaRec, setimaRec, oitavaRec, nonaRec, decimaRec]
 
     return recArray[randomSugs]

@@ -45,7 +45,8 @@ h1{
     margin-top: 0;
 }
 button{
-    margin: auto;
+    display: inline;
+    
 }
 button:hover{
     cursor: pointer;
